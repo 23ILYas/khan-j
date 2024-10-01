@@ -1,4 +1,26 @@
 <head>
+  var cpm = {
+  onInitialise: function(status) {
+    if (this.hasConsented('analytics')) {
+      console.log('The analytics category is allowed');
+    }
+  },
+  onStatusChange: function(status, previousStatus) {
+    if (this.hasConsented("analytics")) {
+      console.log('The analytics category is allowed');
+    }
+  },
+  onAllow: function(category) {
+    if (category == 'analytics') {
+      console.log('The analytics category was just allowed');
+    }
+  },
+  onRevoke: function(category) {
+    if (category == 'analytics') {
+      console.log('The analytics category was just revoked');
+    }
+  },
+};
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7999574926531855"
      crossorigin="anonymous"></script>
 </head>
